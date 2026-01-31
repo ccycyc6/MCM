@@ -26,3 +26,14 @@ Analysis of Model Certainty. (Left) Evaluation of a specific week (Season 28, We
 1_2_1.png model2的存活图
 The Survival Landscape of Contestants. The scatter plot illustrates the relationship between Judge Rank (x-axis) and the model-estimated Fan Share (y-axis). Blue points represent contestants who advanced (Safe), while red points indicate those who were eliminated. The distinct separation between the two groups outlines a "survival frontier," demonstrating the compensatory mechanism where lower judge rankings require significantly higher fan support to avoid elimination.
 
+1_2_2.png
+裁判排名 (Judge Rank) 与 模型估算的粉丝份额 (Estimated Fan Share) 的关系图。
+
+Figure 1_2_2: Correlation Analysis between Judge Ranks and Reconstructed Fan Shares in Season 2. Outliers (e.g., Jerry Rice) demonstrate the decoupling of judge evaluation and popularity.
+趋势性 (General Trend)： 总体来看，裁判排名靠前（X轴数值小）的选手，粉丝份额通常也较高（分布在左上角），说明大众审美与专业评判在大部分情况下是一致的。
+异常值 (The Anomalies - "The Jerry Rice Effect")： 注意图中被标注出的 Jerry Rice 和 Master P。他们的点位于 右上角 或 右中区域。
+含义： 他们的裁判排名很差（数值大，甚至接近垫底），但你的模型反推算出他们的粉丝份额极高（Y轴高），这解释了为什么他们没有被淘汰。
+作用： 这是对你模型准确性的极佳证明。你的模型成功捕捉到了导致Rank制度崩塌的“罪魁祸首”。
+不确定性 (Uncertainty Bars)： 图中的灰色误差棒（Error Bars）展示了 uncertainty_95ci。
+学术加分点： 在论文中强调这一点，说明你的模型不是盲目输出一个数值，而是考虑了信息熵或概率分布，体现了建模的严谨性。
+
