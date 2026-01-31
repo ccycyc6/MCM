@@ -25,14 +25,11 @@ def solve_sigmoid_engine(
     avg_share = 1.0 / n
     
     # --- Step 1: 计算 Pity Score (可怜系数) ---
-    # 逻辑：分数相对于平均分越低，Pity Score 越高 (0->1)
     threshold = avg_share
-    # 归一化得分差异
     score_diff = (threshold - J) / (np.std(J) + 1e-9) 
     pity_scores = expit(sigmoid_k * score_diff)
     
     # --- Step 2: 构建动态目标 (Target Blending) ---
-    # 混合“跟随裁判(Herding)”与“同情救助(Sympathy)”
     target_herding = J
     target_sympathy = np.ones(n) * avg_share * sympathy_boost
     
@@ -40,7 +37,6 @@ def solve_sigmoid_engine(
     v_target = v_target / np.sum(v_target) # 归一化
     
     # --- Step 3: 构建 U 型置信度权重 ---
-    # 极端分数（极高或极低）预测信心强，中间分数允许模型根据约束摆动
     confidence = 2 * np.abs(pity_scores - 0.5) 
     weights_vector = 1.0 + 5.0 * confidence
     
@@ -78,17 +74,28 @@ def solve_sigmoid_engine(
                    options={'maxiter': 100, 'ftol': 1e-6})
     
     if res.success:
-        return res.x / np.sum(res.x), pity_scores, True
+        # [FIX] 这里增加了返回 res.fun (loss值)
+        return res.x / np.sum(res.x), pity_scores, True, res.fun
     else:
-        return v_target, pity_scores, False
+        # [FIX] 失败时返回 0.0 或当前状态的 loss
+        return v_target, pity_scores, False, 0.0
 
 # ==============================================================================
 # 2. 自动化流水线 (The Pipeline)
 # ==============================================================================
 def run_advanced_pipeline(input_csv):
-    df = pd.read_csv(input_csv)
+    try:
+        df = pd.read_csv(input_csv)
+    except FileNotFoundError:
+        print(f"Error: 找不到输入文件 '{input_csv}'。请确保文件存在。")
+        return pd.DataFrame()
+
     df_model = df[df['era'] == 'Percentage'].copy()
     
+    if df_model.empty:
+        print("Warning: 没有找到 'Percentage' 时代的数据。")
+        return pd.DataFrame()
+
     output_records = []
     for season in sorted(df_model['season'].unique()):
         print(f"Processing Season {season}...")
@@ -105,8 +112,8 @@ def run_advanced_pipeline(input_csv):
             v_prior = np.array([last_week_memory.get(n, 1.0/len(names)) for n in names])
             v_prior /= np.sum(v_prior)
             
-            # 调用高级引擎
-            solved_v, pities, success = solve_sigmoid_engine(J, is_elim, v_prior)
+            # 调用高级引擎 [FIX] 接收 4 个返回值
+            solved_v, pities, success, loss_val = solve_sigmoid_engine(J, is_elim, v_prior)
             
             # 更新记忆
             last_week_memory = dict(zip(names, solved_v))
@@ -115,14 +122,21 @@ def run_advanced_pipeline(input_csv):
             for i, name in enumerate(names):
                 output_records.append({
                     'season': season, 'week': week, 'name': name,
-                    'judge_share': J[i], 'pity_score': pities[i],
-                    'est_fan_share': solved_v[i], 'success': success,
-                    'total_implied': J[i] + solved_v[i]
+                    'judge_share': J[i], 'pity_score': pities[i], 
+                    'is_eliminated': is_elim[i],
+                    'est_fan_share': solved_v[i], 
+                    'success': success,
+                    'implied_total_score': J[i] + solved_v[i],
+                    'loss_value': loss_val  # [FIX] 补上这一列
                 })
                 
     return pd.DataFrame(output_records)
 
 if __name__ == "__main__":
-    results = run_advanced_pipeline('processed_dwts_model_input.csv')
-    results.to_csv('final_fan_vote_estimation.csv', index=False)
-    print("Done! Check 'final_fan_vote_estimation.csv'.")
+    input_file = 'processed_dwts_model_input.csv' 
+    results = run_advanced_pipeline(input_file)
+    
+    if not results.empty:
+        output_file = 'model1_result.csv'
+        results.to_csv(output_file, index=False)
+        print(f"Done! 包含 'loss_value' 的结果已保存至 '{output_file}'。")
