@@ -16,7 +16,7 @@ Visualization of the Adaptive Pity-Momentum Mechanism.
 (b) The mechanism validation showing the underlying Sigmoid function. By normalizing the judge scores ($z$-score), all data points collapse onto a single theoretical curve, effectively distinguishing between the "Sympathy Region" (where fans rescue underdogs) and the "Herding Region" (where fans validate high scores).
 
 4.png  模型1模型“拟合效果”的核心图表，它揭示了裁判评分与粉丝投票之间的非线性博弈关系
-Model Verification - Decoupling Sympathy Bias from Elimination Constraints. (a) The Sympathy Effect: The scatter plot displays the estimated fan share versus judge share, color-coded by the Pity Score. The text labels (with white backgrounds) clearly demarcate the "Sympathy Zone" in the upper-left (where fans boost underdogs) and the "Herding Zone" in the lower-right (where fans agree with judges). (b) Elimination Outcome: The same data classified by competition result. The red dashed box highlights the "Danger Zone" where both judge and fan scores are low, leading to elimination. Note how the annotation is positioned to avoid obscuring the dense cluster of eliminated contestants (red crosses).
+Decoupling Sympathy Bias from Elimination Constraints. (a) The Sympathy Effect: The scatter plot displays the estimated fan share versus judge share, color-coded by the Pity Score. The text labels (with white backgrounds) clearly demarcate the "Sympathy Zone" in the upper-left (where fans boost underdogs) and the "Herding Zone" in the lower-right (where fans agree with judges). (b) Elimination Outcome: The same data classified by competition result. The red dashed box highlights the "Danger Zone" where both judge and fan scores are low, leading to elimination. Note how the annotation is positioned to avoid obscuring the dense cluster of eliminated contestants (red crosses).
 
 5.png 确定性分析图
 Analysis of Model Certainty. (Left) Evaluation of a specific week (Season 28, Week 2) reveals that the model constraints are tightest for the eliminated contestant (Mary Wilson), resulting in high estimation certainty (narrow error bar), whereas safe contestants exhibit larger degrees of freedom. (Right) Comparing the Rank System (S1-S2) with the Percentage System (S3+), we observe no significant change in the distribution of uncertainty intervals. This confirms that the variation in certainty is driven by the binary outcome (Elimination vs. Safety) rather than the scoring algorithm itself.
@@ -40,3 +40,10 @@ Distribution Variance Contrast between Judge Shares and Fan Shares. The violin p
 
 11.png “压路机”和“放大器”的理论区别
 Conceptual Comparison of Aggregation Mechanisms. The blue dashed line illustrates the Rank Method acting as an "Equalizer": once a contestant surpasses another, the system reward is fixed regardless of the margin, effectively "killing" excess variance. The red solid line depicts the Percentage Method acting as an "Amplifier": system rewards scale linearly with raw performance gaps. The "Viral Zone" indicates the scenario where massive fan support creates a reward magnitude unattainable under the rank-based system.
+
+
+12.png 命运分岔图
+见problem2_2.md
+
+13.png 死亡陷阱图
+见problem2_2.md
