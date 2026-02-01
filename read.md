@@ -12,8 +12,8 @@ p4 figure 1 de 图a和图b的具体解释
    figure 2 解释缺失（看不懂）
 
 第一问的似乎没回答问题，应该展示粉丝数的情况（对于每个模型）
-
 model1 应该展示潜在粉丝投票向量v
+
 model2 处的图片应该紧跟Figure 3: Survival Landscape (Model 2): Visualizing the decision boundary.Figure 4: Trajectory of Jerry Rice: Tracking the underdog path.,而且缺少解释
 
 p7 2_1_2.py是啥，直接改成“通过模拟。。。”
