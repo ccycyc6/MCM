@@ -173,5 +173,5 @@ def generate_decision_radar_chart_optimized(file_path):
     
     return stat_df
 
-# 调用函数 (确保文件名正确)
+
 generate_decision_radar_chart_optimized('model1_result.csv')
