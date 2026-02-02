@@ -8,28 +8,57 @@ competitive outcomes and historical controversies.
 任务3：分析名人人口统计特征、行业背景及专业搭档对评委评分与粉丝支持度的影响。
 ##demographics这个单词不当
 
+
 p4 figure 1 de 图a和图b的具体解释
    figure 2 解释缺失（看不懂）
+##两图位置不变
+Figure 1_1_1:
+Figure 1_1_1: The Mechanism of Sympathy Bias and Reconstructed Fan Distribution.
+(a) The correlation between Judge Share ($J$) and Estimated Fan Share ($F$). (b)The Sigmoid-based "Pity Score" activation function. 
+Figure 1_1_2:
+Figure 1_1_1:The "Rational" Zone (Lower-Right Trend)What we see: The data points form a linear cluster. As Judge Score ($J$) increases, Fan Share ($F$) rises proportionally.2. The "Emotional" Zone (Upper-Left Tail) At low judge scores ($J < 0.15$), the fan share deviates upwards from the trend line.
 
-model2 处的图片应该紧跟Figure 3: Survival Landscape (Model 2): Visualizing the decision boundary.Figure 4: Trajectory of Jerry Rice: Tracking the underdog path.,而且缺少解释
+
+Figure 1_1_4和1_1_5的位置应该并列放在3_2_2的末尾，且带上解释（1_1_5的解释在3.3的头上）
+
+Figure 1_2_1:(直接放在3.3.1的末尾)
+Figure 1_2_1:Distribution of Estimated Fan Shares by Outcome in Rank-Based Systems. The boxplots contrast the fan share distributions for Safe (0) and Eliminated (1) contestants. The "Rank" era exhibits significant variance and extreme outliers, visually confirming the high volatility and susceptibility to "Black Swan" fan interventions compared to the compressed distribution in the "Rank + Save" era.
+
+
+删去1_2_2及其解释
+
+
+Figure 1_3_1:(直接放在3.3.2的末尾)
+Figure 1_3_1:Percentage Era (Blue): The expansive area along the Stability axis corresponds to the "High Precision" observed in our model. The preservation of continuous magnitude information allows for tight convergence, reflected here as structural robustness.
+Rank Era (Red): The visible collapse along the Stability and Independence axes acts as a geometric proxy for Information Loss. This contraction illustrates how ordinal ranking expands the feasible solution space (increasing uncertainty), resulting in the "Chaotic" profile shown above.
+
+Figure 1_3_2:(在Figure 1_3_1下面)
+Stability vs. Chaos Comparison. Top (Percentage Era): Continuous scoring retains magnitude information, creating a consistent safety margin (blue) and high predictability. Bottom (Rank Era): Ordinal ranking causes information loss, resulting in volatile reconstruction probabilities (pink) and "Black Swan" anomalies (arrows), reflecting the chaotic nature of discrete systems.
+
+Figure 1_4_1:(在1_3_2下面)
+Temporal Evolution of Estimation Uncertainty. The visualization highlights a structural break in model precision driven by voting rules. The Percentage System (Seasons 3-27) enables near-perfect parameter recovery (near-zero CI width) by preserving magnitude information. Conversely, the Rank System (Seasons 1-2, 28+) introduces significant high uncertainty (wide intervals) due to information loss inherent in compressing continuous scores into ordinal ranks.
+
 
 p7 2_1_2.py是啥，直接改成“通过模拟。。。”
-图6放的位置放在4.1.2前面
 
-4.1 结果和解释错误 首先重申两个问题，1,在不同制度下结果是否存在差异  2,哪种方法更倾向于观众  !!!重做
-图7属于4.1
+4.1 整体全部重构，参考2_1.docs,4.1包括的图有2_1_1,2_1_2
 
 4.2"在模拟代码2 2 1.py中"改成“我们的模拟结果显示”
 
-图8的解释不正确
+去除整个4.2.2部分
 
-4.3.2去掉（用于量化获胜者与顶尖技术表现者之间的偏差）
 
-图9放在4.3.3前面
+
+Figure 2_3(在4.3.1后面)
+Figure 2_3: Decision Radar showing the structural trade-offs of voting mechanisms. The chart visually validates the superiority of the "Pct + Save" (Green) approach. While the pure Percentage Method (Blue) maximizes Fan Impact ("Democracy") at the cost of Stability, and Rank-based methods (Orange/Red) sacrifice Fan engagement for Predictability, the Pct + Save mechanism achieves the optimal balance. It expands the "Fairness" and "Stability" axes significantly—acting as the "Circuit Breaker"—while retaining a higher degree of Fan Impact than rank-based alternatives, thus preventing the "dampening" effect on audience participation.
+
+去掉整个4.3.2
+
+
 
 注意一下全文各处的双引号
 
-5.3  的图片说明不对  图10和图11需要修改
+task3我先不看了
 
 任务四的标题改成“建立评分新机制”
 
