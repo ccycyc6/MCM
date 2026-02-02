@@ -29,11 +29,10 @@ Figure 1_2_1:Distribution of Estimated Fan Shares by Outcome in Rank-Based Syste
 
 
 Figure 1_3_1:(直接放在3.3.2的末尾)
-Figure 1_3_1:Percentage Era (Blue): Blue (Percentage Era): Percentage Era (Blue): Preserving continuous magnitudes enables tight convergence and structural robustness, reflected by high stability.Rank Era (Red): Information loss from ranking collapses stability and independence, expands uncertainty, and yields a chaotic profile.
+Figure 1_3_1:Percentage Era (Blue): Percentage Era (Blue): Preserving continuous magnitudes enables tight convergence and structural robustness, reflected by high stability.Rank Era (Red): Information loss from ranking collapses stability and independence, expands uncertainty, and yields a chaotic profile.
 
 Figure 1_3_2:(在Figure 1_3_1下面)
-Percentage Era: Continuous scoring preserves magnitude, yielding stable, predictable behavior.
-Rank Era: Ordinal ranking loses information, producing volatility and black-swan anomalies characteristic of chaotic systems.
+Percentage Era: Percentage Era: Continuous scoring preserves magnitude, yielding stable, predictable behavior.Rank Era: Ordinal ranking loses information, producing volatility and black-swan anomalies characteristic of chaotic systems.
 
 Figure 1_4_1:(在1_3_2下面)
 Temporal Evolution of Estimation Uncertainty. The visualization highlights a structural break in model precision driven by voting rules. The Percentage System (Seasons 3-27) enables near-perfect parameter recovery (near-zero CI width) by preserving magnitude information. Conversely, the Rank System (Seasons 1-2, 28+) introduces significant high uncertainty (wide intervals) due to information loss inherent in compressing continuous scores into ordinal ranks.
@@ -74,6 +73,7 @@ task3我先不看了
 流程图需要美化，且放在6.1.3后面，6.2前面
 
 "• 解读：黄金豁免与淘汰赛的组合机制确保被淘汰选手始终是风险组中技术实力最弱者，从而消除了系统的"遗憾"。"这里的解读改成：说明
+
 
 
 
