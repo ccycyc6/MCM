@@ -29,11 +29,12 @@ Figure 1_2_1:Distribution of Estimated Fan Shares by Outcome in Rank-Based Syste
 
 
 Figure 1_3_1:(直接放在3.3.2的末尾)
-Figure 1_3_1:Percentage Era (Blue): The expansive area along the Stability axis corresponds to the "High Precision" observed in our model. The preservation of continuous magnitude information allows for tight convergence, reflected here as structural robustness.
-Rank Era (Red): The visible collapse along the Stability and Independence axes acts as a geometric proxy for Information Loss. This contraction illustrates how ordinal ranking expands the feasible solution space (increasing uncertainty), resulting in the "Chaotic" profile shown above.
+Figure 1_3_1:Percentage Era (Blue): Blue (Percentage Era): Continuous numerical information is preserved, enabling high-precision convergence and manifesting as structural robustness along the Stability axis.
+Red (Rank Era): Ordinal ranking causes information loss, leading to contraction along the Stability and Independence axes, an expanded solution space, increased uncertainty, and a chaotic profile.
 
 Figure 1_3_2:(在Figure 1_3_1下面)
-Stability vs. Chaos Comparison. Top (Percentage Era): Continuous scoring retains magnitude information, creating a consistent safety margin (blue) and high predictability. Bottom (Rank Era): Ordinal ranking causes information loss, resulting in volatile reconstruction probabilities (pink) and "Black Swan" anomalies (arrows), reflecting the chaotic nature of discrete systems.
+Percentage Era: Continuous scoring preserves magnitude, yielding stable, predictable behavior.
+Rank Era: Ordinal ranking loses information, producing volatility and black-swan anomalies characteristic of chaotic systems.
 
 Figure 1_4_1:(在1_3_2下面)
 Temporal Evolution of Estimation Uncertainty. The visualization highlights a structural break in model precision driven by voting rules. The Percentage System (Seasons 3-27) enables near-perfect parameter recovery (near-zero CI width) by preserving magnitude information. Conversely, the Rank System (Seasons 1-2, 28+) introduces significant high uncertainty (wide intervals) due to information loss inherent in compressing continuous scores into ordinal ranks.
@@ -74,6 +75,7 @@ task3我先不看了
 流程图需要美化，且放在6.1.3后面，6.2前面
 
 "• 解读：黄金豁免与淘汰赛的组合机制确保被淘汰选手始终是风险组中技术实力最弱者，从而消除了系统的"遗憾"。"这里的解读改成：说明
+
 
 
 
