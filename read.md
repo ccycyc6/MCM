@@ -79,7 +79,12 @@ task3我先不看了
 
 
 
-1
+1摘要部分
+
+The Percentage System offers granularity but is
+structurally vulnerable to “Tyranny of the Majority,” while the Rank System buffers against
+outliers but suffers from severe information loss. 
+
 
 
 
