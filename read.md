@@ -29,8 +29,7 @@ Figure 1_2_1:Distribution of Estimated Fan Shares by Outcome in Rank-Based Syste
 
 
 Figure 1_3_1:(直接放在3.3.2的末尾)
-Figure 1_3_1:Percentage Era (Blue): Blue (Percentage Era): Continuous numerical information is preserved, enabling high-precision convergence and manifesting as structural robustness along the Stability axis.
-Red (Rank Era): Ordinal ranking causes information loss, leading to contraction along the Stability and Independence axes, an expanded solution space, increased uncertainty, and a chaotic profile.
+Figure 1_3_1:Percentage Era (Blue): Blue (Percentage Era): Percentage Era (Blue): Preserving continuous magnitudes enables tight convergence and structural robustness, reflected by high stability.Rank Era (Red): Information loss from ranking collapses stability and independence, expands uncertainty, and yields a chaotic profile.
 
 Figure 1_3_2:(在Figure 1_3_1下面)
 Percentage Era: Continuous scoring preserves magnitude, yielding stable, predictable behavior.
@@ -75,6 +74,7 @@ task3我先不看了
 流程图需要美化，且放在6.1.3后面，6.2前面
 
 "• 解读：黄金豁免与淘汰赛的组合机制确保被淘汰选手始终是风险组中技术实力最弱者，从而消除了系统的"遗憾"。"这里的解读改成：说明
+
 
 
 
